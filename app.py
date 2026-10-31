@@ -49,6 +49,38 @@ def index():
     return "maple29-bot ok", 200
 
 
+@app.get("/privacy")
+def privacy():
+    return """<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Privacy Policy — Maple29 Chatbot</title></head>
+<body style="font-family:sans-serif;max-width:700px;margin:40px auto;padding:0 20px;line-height:1.6">
+<h1>Privacy Policy — Maple29 Messenger Chatbot</h1>
+<p><em>Last updated: 31 October 2026</em></p>
+<p>The Maple29 Messenger chatbot ("the bot") is operated by Maple29, a women's clothing brand based in Yangon, Myanmar. Contact: maple29myanmar@gmail.com.</p>
+<h2>What data the bot collects</h2>
+<ul>
+<li>Messages you send to the Maple-29 Facebook Page on Messenger.</li>
+<li>If you place an order through the bot: the item, size, color, your name, phone number, and delivery township.</li>
+</ul>
+<h2>How the data is used</h2>
+<ul>
+<li>To answer your questions about products, prices, sizes, delivery, and preorders.</li>
+<li>To pass your order details to the Maple29 sales team, who confirm stock availability and finalize the order.</li>
+</ul>
+<h2>What the bot does not do</h2>
+<ul>
+<li>It does not sell or share your data with advertisers or third parties, except the delivery courier needed to ship your order.</li>
+<li>It does not promise stock availability — the sales team confirms availability before any order is finalized.</li>
+</ul>
+<h2>Data retention</h2>
+<p>Order details are kept by the Maple29 team as business records. You may ask us to delete your information at any time via the Page's Messenger or maple29myanmar@gmail.com.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the updated version will be posted at this address.</p>
+</body>
+</html>""", 200
+
+
 @app.get("/webhook")
 def verify():
     mode = request.args.get("hub.mode")
